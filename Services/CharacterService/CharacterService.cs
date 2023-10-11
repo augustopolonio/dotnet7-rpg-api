@@ -55,6 +55,11 @@ namespace dotnet_rpg.Services.CharacterService
                 if (character is null)
                     throw new Exception($"Character with Id '{updatedCharacter.Id} not found.'");
 
+                //Modify a Character with AutoMapper (1 of 2 options above. However, didn't work)
+                //_mapper.Map<Character>(updatedCharacter);
+                //_mapper.Map(updatedCharacter, character);
+
+                //Modify a Character (manually)
                 character.Name = updatedCharacter.Name;
                 character.HitPoints = updatedCharacter.HitPoints;
                 character.Strength = updatedCharacter.Strength;
@@ -66,8 +71,8 @@ namespace dotnet_rpg.Services.CharacterService
             }
             catch (Exception ex)
             {
-                serviceResponse.Success = false;        
-                serviceResponse.Message = ex.Message;   
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
             }
 
             return serviceResponse;

@@ -11,6 +11,8 @@ namespace dotnet_rpg
         {
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
+            //Modify a Character with AutoMapper
+            CreateMap<UpdateCharacterDto, Character>();
         }
     }
 }
