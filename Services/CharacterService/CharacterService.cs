@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace dotnet_rpg.Services.CharacterService
 {
-    public class CharacterSevice : ICharacterSevice
+    public class CharacterService : ICharacterService
     {
         private static List<Character> characters = new List<Character> {
             new Character(),

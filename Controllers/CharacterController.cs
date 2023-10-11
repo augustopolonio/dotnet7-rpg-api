@@ -10,33 +10,33 @@ namespace dotnet_rpg.Controllers
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private readonly ICharacterSevice _characterSevice;
+        private readonly ICharacterService _characterService;
 
         //Step 1: type "ctor" (shrortcut to add the base of this constructor)
-        //Step 2: Select the parameter "characterSevice" and execute "Ctrl + .", then "Create and assing field 'characterService'"
+        //Step 2: Select the parameter "characterService" and execute "Ctrl + .", then "Create and assing field 'characterService'"
         //More: in minute 58:00 https://youtu.be/9zJn3a7L1uE?si=dspVn97kBvfQzNKu&t=3497
-        public CharacterController(ICharacterSevice characterSevice)
+        public CharacterController(ICharacterService characterService)
         {
-            _characterSevice = characterSevice;
+            _characterService = characterService;
         }
 
         [HttpGet("GetAll")]
         // [Route("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get() 
         {
-            return Ok(await _characterSevice.GetAllCharacters());
+            return Ok(await _characterService.GetAllCharacters());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> GetSingle(int id) 
         {
-            return Ok(await _characterSevice.GetCharacterById(id));
+            return Ok(await _characterService.GetCharacterById(id));
         }
 
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> AddCharacter(AddCharacterDto newCharacter) 
         {
-            return Ok(await _characterSevice.AddCharacter(newCharacter));            
+            return Ok(await _characterService.AddCharacter(newCharacter));            
         }
     }
 }

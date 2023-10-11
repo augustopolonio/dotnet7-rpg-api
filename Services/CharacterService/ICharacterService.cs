@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace dotnet_rpg.Services.CharacterService
 {
-    public interface ICharacterSevice
+    public interface ICharacterService
     {
         Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters();
         Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
