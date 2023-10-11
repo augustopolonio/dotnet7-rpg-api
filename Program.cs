@@ -1,6 +1,7 @@
 //The "global" was added manually to using this in all classes
 global using dotnet_rpg.Models;
 global using dotnet_rpg.Services.CharacterService;
+global using dotnet_rpg.Dtos.Character;
 
 var builder = WebApplication.CreateBuilder(args);
 
